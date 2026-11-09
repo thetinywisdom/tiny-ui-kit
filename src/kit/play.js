@@ -115,7 +115,8 @@ function handle(ev) {
     m.rotation.x = -Math.PI / 2; m.position.set(player.x - Math.sin(player.heading) * 0.6, 0.04, player.z - Math.cos(player.heading) * 0.6);
     scene.add(m); peels.push(m); return;
   }
-  if (ev.type === 'chargeStart') { const t = target(); if (t) charge = { t: 0, who: t }; return; }
+  if (ev.type === 'chargeCancel') { charge = null; return; } // held, then dragged the camera
+  if (ev.type === 'chargeStart') { if (ev.x !== undefined) return; const t = target(); if (t) charge = { t: 0, who: t }; return; } // a mouse hold on the ground is not a slap (only the SLAP button / key 1)
   if (ev.type === 'chargeEnd') { if (charge) act(charge.t > 1.6 ? 'powerslap' : 'slap', charge.who); charge = null; return; }
   if (ev.type === 'choose') {
     if (ev.n === 3) { say(player, 'PFFT!', 'burst'); for (const n of npcs) if (Math.hypot(n.x - player.x, n.z - player.z) < 3.5) { say(n, 'EWW!', 'shout', 0.3); n.down = 2; } return; }
