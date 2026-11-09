@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Play Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" />
+  </head>
+  <body data-hud="pixel">
+    <canvas id="c"></canvas>
+    <div id="overlay"></div>
+    <header id="hud">
+      <div class="title"><strong>Play Demo</strong></div>
+      <span class="spacer"></span>
+      <button id="padBtn" type="button" title="Button layout">🎮<span> Buttons</span></button>
+      <a class="kit-link" href="./character.html">👤<span> Design</span></a>
+      <a class="kit-link" href="./index.html">☰<span> Kit</span></a>
+    </header>
+    <div id="joystick"><div class="knob"></div></div>
+    <div id="cityActions"></div>
+    <div id="toast" hidden></div>
+    <script type="module" src="./src/kit/play.js"></script>
+  </body>
+</html>
