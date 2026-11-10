@@ -45,5 +45,6 @@ The folders match Tiny City Builder's, so files can be copied back and forth.
    into the bubbles list (`say()` in play.js); `anchor()` returns the world
    point over the speaker's head.
 
-`docs/STYLE_GUIDE.md` is Tiny City Builder's style guide (the look of
+`SKILLS.md` explains how everything works and how to extend it, `PLAN.md`
+what is done and next. `docs/STYLE_GUIDE.md` is Tiny City Builder's style guide (the look of
 characters, controls and speech); keep new work consistent with it.
