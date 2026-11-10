@@ -195,7 +195,7 @@ function frame(now) {
   const { W, H } = stage.render(camera);
 
   // the pixel layer: speech, bursts, the slap dial, the buttons and the joystick
-  const px = Math.max(1, Math.round(style.pixelScale || 2));
+  const px = 2; // the UI layer keeps 2 px pixels (the picture gets finer pixels on phones)
   const toScreen = (v) => { const s = v.clone().project(camera); return { x: (s.x + 1) / 2 * W, y: (1 - s.y) / 2 * H, ok: s.z < 1 }; };
   const speech = [], bursts = [];
   for (let i = bubbles.length - 1; i >= 0; i--) {
