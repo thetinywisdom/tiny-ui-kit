@@ -26,13 +26,13 @@ The folders match Tiny City Builder's, so files can be copied back and forth.
 
 | Path | Use it for |
 | --- | --- |
-| `subjects/human.js` (+ `subjects/human/*`) | Building a person: `human.build(params, style)` returns a `THREE.Group` with named joints. `human.schema` (every setting with defaults and options), `human.presets`, `human.randomize(rng)`, `human.applyRules(params)` (no beards on women, etc.). |
+| `subjects/human.js` (+ `subjects/human/*`) | Building a person, in the iso-city style (default) or Classic (`setCharacterStyle`): `human.build(params, style)` returns a `THREE.Group` with named joints. `human.schema` (every setting with defaults and options), `human.presets`, `human.randomize(rng)`, `human.applyRules(params)` (no beards on women, etc.). |
 | `creator/Creator.js` | The designer panel, built from the schema (tabs, chips, swatches, sliders). |
 | `anim/gait.js`, `anim/gaitIK.js` | Walking and running: `createGait()`, `stepGait(g, dt, speed, tune)`, `poseGait(body, g, 'natural', tune)`, `tuneOf(params)` (the walk / run style). Two engines: **New** (feet planted with leg IK, learnt from iso-city; default) and **Classic** (keyframes): `setGaitEngine('New' \| 'Classic')`. `landGait(g, vy)` squashes the legs after a jump. |
 | `controls/input.js` | `CityInput`: keyboard, mouse / touch drag to look, pinch zoom, the walk joystick, clicks / taps / long press (mouse only) as events. `axes()` gives `{ x, z, run, handbrake }`. |
 | `ui/actionPad.js` | `ActionPad`: one button per action, fires on finger-down (works with a thumb on the joystick), layouts Arc / Grid / Split / Bar (`PAD_LAYOUTS`, `setLayout`), `place(W, H, { touch, joy, riding })`, `tiles(...)` for drawing. Events go into `input.events` (`primary`, `chargeStart` / `chargeEnd`, `choose` n 1-3, `jump`, `banana`; `input.runHeld`). |
 | `ui/pixelOverlay.js` | `PixelOverlay`: the pixel layer drawn at the picture's own pixel size: floating speech with earshot (fades with distance), spiky hit bursts, the slap charge dial, the action menu, the action buttons and the joystick. `draw({ W, H, px, speech, bursts, charge, menu, pad, showKeys, stick })`. |
-| `styles/`, `render/ps1.js` | The PS1 look: style materials and lights, low-res rendering with dither and pixel outlines. Colour palettes (`styles/palette.js` `PALETTES`: Golden hour (default), Muted, Vibrant, Candy pop, Cool city, Retro 16, Manga ink): `choosePalette(name)` then reload; the active one is read from localStorage `tinycity.palette`. |
+| `styles/`, `render/ps1.js` | Three looks (`setLook('Default' \| 'PS1' \| '8-bit')`). The PS1 look: style materials and lights, low-res rendering with dither and pixel outlines. Colour palettes (`styles/palette.js` `PALETTES`: Golden hour (default), Muted, Vibrant, Candy pop, Cool city, Retro 16, Manga ink): `choosePalette(name)` then reload; the active one is read from localStorage `tinycity.palette`. |
 | `kit/stage.js` | Shared demo helpers: `createStage(canvas)`, `loadCharacter()` / `saveCharacter()`, `randomCharacter()`, `buildPerson(params)`. |
 | `kit/play.js` | The play demo: read this first to see everything wired together. |
 

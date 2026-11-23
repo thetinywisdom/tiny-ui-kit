@@ -5,6 +5,7 @@ import { createGait, poseGait, stepGait, tuneOf, setGaitEngine, WALK_SPEED, RUN_
 import { defaultsFor } from '../viewer/params.js';
 import { saveFile, openTextFile } from '../lib/saveFile.js';
 import { CHARACTER_FORMAT, buildPerson, createStage, human, loadCharacter, saveCharacter } from './stage.js';
+import { setCharacterStyle } from '../subjects/human.js';
 import '../style.css';
 import './kit.css';
 
@@ -30,6 +31,7 @@ const gait = createGait();
 function rebuild() {
   human.applyRules?.(params);
   setGaitEngine(params.animation);
+  setCharacterStyle(params.characterStyle); // iso-city (default) or Classic
   if (person) stage.scene.remove(person);
   person = buildPerson(params);
   stage.scene.add(person);

@@ -23,6 +23,10 @@ improvements made there can be copied over.
 
 ## Done
 
+7. **iso-city people and three looks** (synced from Tiny City Builder): people
+   are built in the iso-city style by default (Classic kept, "Character style
+   (everyone)" in the designer); looks Default / PS1 / 8-bit in
+   styles/ps1.js (setLook). Also synced: the iso-view gait and shapes changes.
 6. **Phones: finer pixels, soft outlines** (synced): the picture keeps ~400
    rows on a phone; only characters get the strong dark outline; the UI layer
    keeps 2 px pixels.
@@ -36,8 +40,8 @@ improvements made there can be copied over.
 
 ## Next (only when the owner asks)
 
-1. A 🎨 palette picker on the kit pages (palettes work, but there is no button
-   to choose one here yet).
+1. A 🎨 panel on the kit pages for palettes and looks (both work, but there is
+   no button to choose them here yet).
 2. Bring the kit's reactions closer to the game's (comic hits, falls, chases)
    if a game needs them.
 

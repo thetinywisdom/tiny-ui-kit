@@ -46,7 +46,11 @@ src/kit/play.js        the play demo: park, townspeople, joystick + keys, the
                        (deliberately simple) reactions to replace
 src/kit/kit.css        top-bar links, page basics (everything else: style.css)
 src/subjects/human.js  + human/*: the person builder (schema, presets,
-                       randomize, applyRules, adjust, build(params, style))
+                       randomize, applyRules, adjust, build(params, style, { characterStyle })).
+                       Two character styles (setCharacterStyle / characterStyle(); setting
+                       "Character style (everyone)"): iso-city (default, human/isoCity.js:
+                       the owner's previous game's people, no eyes, paddle hands, shell
+                       clothes) or Classic
 src/creator/Creator.js the designer panel, generated from the schema
 src/anim/gait.js       walk / run: createGait, stepGait, poseGait, tuneOf,
                        WALKS / RUNS styles, setGaitEngine('New' | 'Classic'),
@@ -63,7 +67,8 @@ src/ui/pixelOverlay.js PixelOverlay: speech (earshot fade), bursts, charge
                        joystick; draw({ W, H, px, ... }) with px = 2 (the UI's
                        own pixel size, not the picture's)
 src/styles/            index.js (style = ps1Clear, lighting presets), ps1.js
-                       (materials, pixelScale that follows the screen, alpha
+                       (materials, LOOKS Default / PS1 / 8-bit with setLook / activeLook,
+                       localStorage 'tinycity.look'; pixelScale that follows the screen, alpha
                        flag: characters 1, the rest 0.5), palette.js (swatches,
                        snapColor, PALETTES: Golden hour default, Muted, Vibrant,
                        Candy pop, Cool city, Retro 16, Manga ink;

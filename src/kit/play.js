@@ -4,6 +4,7 @@ import { ActionPad, PAD_LAYOUTS } from '../ui/actionPad.js';
 import { PixelOverlay } from '../ui/pixelOverlay.js';
 import { createGait, landGait, poseGait, stepGait, tuneOf, setGaitEngine } from '../anim/gait.js';
 import { buildPerson, createStage, loadCharacter, randomCharacter } from './stage.js';
+import { setCharacterStyle } from '../subjects/human.js';
 import '../style.css';
 import './kit.css';
 
@@ -46,6 +47,7 @@ const pushOut = (pos, r) => {
 // --- people ------------------------------------------------------------------
 const look = loadCharacter();
 setGaitEngine(look.animation);
+setCharacterStyle(look.characterStyle); // everyone in your chosen character style
 const makeWho = (p, x, z) => {
   const root = new THREE.Group(), body = buildPerson(p);
   root.add(body); root.position.set(x, 0, z); scene.add(root);
